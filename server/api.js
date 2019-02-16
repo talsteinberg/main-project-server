@@ -1,37 +1,34 @@
-// require('dotenv').config()
 // const express = require('express');
-// const morgan = require('morgan')
-// const marker = require('@ajar/marker')
-
-// const db = require('./db/mongoose.connection')
-// const user_router = require('./modules/user/user.router');
-// const {error_handler,not_found} = require('./middleware/errors.handler');
-
-// const { API_PORT,API_HOST } = process.env;
-
 // const app = express();
-// app.use(morgan('dev'))
 
-// // test routing
-// app.get('/api', (req, res) => {
-//   res.status(200).json({ express: 'Hello From Express' });
+
+// app.get('/',  (req, res) => {
+//     res.status(200).send('Hello Express!')
 // });
 
-// // actual routing
-// app.use('/api/users', user_router);
 
-// // central error handling
-// app.use(error_handler);
+// app.get('*',  (req, res) => {
+//     res.status(404).send('My 404 not found')
+// })
 
-// //when no routes were matched...
-// app.use('*', not_found);
+// app.listen(3030,  ()=> {
+//     console.log('listening on localhost:3030')
+// });
 
 
-// //start the express api server
-// (async ()=> {
-//   //connect to mongo db
+// // TODO - pass to another folder
 
-//   await db.connect();  
-//   await app.listen(API_PORT,API_HOST);
-//   marker.magenta(`api is live on`,`  ✨ ⚡  http://${API_HOST}:${API_PORT} ✨ ⚡`);  
-// })().catch(error=> marker.error(error))
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, { useNewUrlParser: true },function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("mydb");
+//   //var myobj = { firstName: "Stav", lasName: "Rabinovitch" };
+//   //dbo.collection("users").insertOne(myobj, function(err, res) {
+//     dbo.collection("users").findOne({}, function(err, result) {
+//     if (err) throw err;
+//     console.log(result.firstName);
+//     db.close();
+//   });
+// });

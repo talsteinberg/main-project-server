@@ -5,8 +5,6 @@ const { DB_HOST, DB_PORT, DB_NAME } = process.env
 
 const uri = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`
 
-
-
 const options = {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -23,7 +21,6 @@ const options = {
   };
 
 const connect = async ()=> {
-    console.log(uri);
     await mongoose.connect(uri, options)
     marker.magenta(' ✨  Connected to Mongo DB ✨ ')
 }

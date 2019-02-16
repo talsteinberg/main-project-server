@@ -1,0 +1,47 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                <img alt="Brand" src="/images/icon.png">
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Movember</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse ">
+
+            <ul class="nav navbar-nav ">
+                <li><a href="/users">Our Members</a></li>
+
+                {{#unless user}}
+                    <li><a href="/signup">Signup</a></li>
+                    <li><a href="/auth/github" class="fa fa-github-square fa-2x"></a></li>
+                    <li><a href="/auth/facebook" class="fa fa-facebook-square fa-2x"></a></li>
+                    <li><a href="/auth/twitter" class="fa fa-twitter-square fa-2x"></a></li>
+                    <li><a href="/auth/google" class="fa fa-google-plus-square fa-2x"></a></li>
+                    <li><a href="/auth/linkedin" class="fa fa-linkedin-square fa-2x"></a></li>
+                {{/unless}}
+
+            </ul>
+{{#unless user}}
+            <form action="/auth/login" method="POST" class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" name="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+{{/unless}}
+{{#if user}}
+            <h3>{{user.first_name}}</h3>
+            <a href="/auth/logout">logout</a>
+{{/if}}
+        </div>
+    </div>
+</nav>
