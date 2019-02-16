@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon ./server/app"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,11 @@
     "nodemon": "^1.18.10"
   },
   "dependencies": {
+    "@ajar/marker": "^1.2.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "mongodb": "^3.1.13"
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.13",
+    "morgan": "^1.9.1"
   }
 }
