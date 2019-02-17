@@ -1,7 +1,7 @@
-const mongoose    = require('mongoose')
-const marker = require('@ajar/marker')
+const mongoose    = require('mongoose');
+const marker = require('@ajar/marker');
 
-const { DB_HOST, DB_PORT, DB_NAME } = process.env
+const { DB_HOST, DB_PORT, DB_NAME } = process.env;
 
 const uri = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`
 

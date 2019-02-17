@@ -5,14 +5,14 @@ const app = express();
 const marker = require('@ajar/marker');
 const exphbs = require('express-handlebars');
 
-const db = require('./db/mongoose.connection')
+const db = require('./db/mongoose.connection');
 const { API_PORT,API_HOST } = process.env;
 const web_router = require('../routes/web');
-//const api_router = require('../routes/api');
+const api_router = require('../routes/api');
 
 //  routers
-//app.use('/api',api_router);
 app.use('/home',web_router);
+app.use('/api',api_router);
 
 app.get('/',  (req, res) => {
   res.status(200).send('Hello Express!')

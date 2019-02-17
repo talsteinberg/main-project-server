@@ -1,0 +1,5 @@
+const Offers = {
+    DOG_WALKER: 1,
+    PROFESSIONAL_PHOTOGRAPHY: 2,
+    PRIVATE_MUSIC_LESSON: 3,
+  };
